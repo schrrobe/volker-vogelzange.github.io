@@ -1,0 +1,185 @@
+@import 'vars.scss';
+@import "mixins.scss";
+html {
+    box-sizing: border-box;
+    // font: 100 87.5%/1.5 map-get($fonts,primary);
+    // color: $font;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+  }
+  
+  body {
+    position: relative;
+    // width: 100%;
+    // height: 100%;
+    // background: $background;
+    font-size: $text-body;
+    display: block;
+    justify-content: center;
+  
+    // Prevent scrolling of page
+    // eg. for opened modals
+    &.no-scrolling {
+      overflow: hidden;
+    }
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .show-mobile {
+    display: block!important;
+    @include bp(l) {
+      display: none!important;
+    }
+  }
+  .show-desktop {
+    display: none!important;
+    @include bp(l) {
+      display: flex!important;
+    }
+  }
+  
+  .text-highlight {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 50%,
+      lightgrey 50%
+    );
+    border-radius: 2px;
+    pad: $pad;
+    -webkit-box-decoration-break: clone;
+    line-height: 1.4;
+  
+    &.text-highlight-primary {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 50%,
+        $primary 50%
+      );
+    }
+    &.text-highlight-secondary {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 50%,
+          $secondary 50%
+        );
+      }
+  }
+
+  h1 {
+    font-size: $headline-h2* 0.7;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Für ältere Browser */;
+    line-height: 2;
+    @include bp(l) {
+        font-size: $headline-h1;
+        line-height:2.5;
+      }
+    &.h1-impressum{
+      font-size: $headline-h2;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word; /* Für ältere Browser */;
+      line-height: 2;
+      @include bp(l) {
+        font-size: $headline-h1;
+        line-height:2.5;
+      }
+    }
+  }
+
+  h2 {
+    font-size: $headline-h2;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Für ältere Browser */;
+    line-height: 2;
+    text-align: center;
+    @include bp(l) {
+        font-size: $headline-h2;
+        line-height:2.5;
+      }
+    &.impressum{
+      font-size: $headline-h3;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word; /* Für ältere Browser */;
+      line-height: 2;
+      text-align: left;
+      @include bp(l) {
+        font-size: $headline-h1;
+        line-height:2.5;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $headline-h3;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Für ältere Browser */;
+    line-height: 3;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: $pad*2;
+    @include bp(l) {
+        font-size: $headline-h3;
+        line-height:2;
+      }
+  }
+
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+
+  p {
+    color: $font;
+    font-size: 18px;
+    line-height:1.8;
+  }
+
+  hr {
+    color: $primary;
+    height: $pad * 0.5;
+    background-color: $primary;
+    width: 10%;
+    .hr-small-white{
+      color: white;
+      height: $pad * 0.2;
+      width: 40%;
+      background-color: white;
+
+    }
+    
+  }
+
+  .rounded-borders {
+    border-radius: 16px!important;
+  }
+
+  .mt-space-1{
+    margin-top: 0;
+    @include bp(l){
+      margin-top: $space-margin;
+    }
+  }
+  .mt-space-2{
+    margin-top: $space-margin;
+    @include bp(l){
+      margin-top: $space-margin*2;
+    }
+  }
+  .mb-space-2{
+    margin-bottom: $space-margin *2;
+  }

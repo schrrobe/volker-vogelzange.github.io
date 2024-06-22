@@ -1,0 +1,60 @@
+
+
+// =======================
+//	Breakpoints
+// =======================
+
+//Quasar breakpoints
+$breakpoint-xs: 400px;
+$breakpoint-sm: 1023px;
+$breakpoint-md: 1280px;
+$breakpoint-lg: 1680px;
+
+$breakpoints: (
+  xs: 400px,
+  s: 476px,
+  m: 768px,
+  l: 1024px,
+  xl: 1280px,
+  xxl: 1680px,
+);
+
+// =======================
+//	Font Sizes
+// =======================
+
+$text-body: 16px;
+$headline-h1: 44px;
+$headline-h2: 38px;
+$headline-h3: 24px;
+$headline-h4: 21px;
+$headline-h5: 18px;
+$headline-h6: 16px;
+
+// =======================
+//	Layout
+// =======================
+$max-width: 1400px;
+$space-margin: 30px;
+$pad: 20px;
+$ui-height: 40px;
+$header-height: 80px;
+
+// #################################################
+// COLORS
+// #################################################
+// $primary: #5c93c3;
+$primary: #1976D2;
+$secondary: #819f17;
+$font: #333;
+$dark: #1d1d1d;
+$dark-page: #121212;
+$accent: #9c27b0;
+$white: #fff;
+$background: #f6f6f6;
+$borders: lightgrey;
+
+$positive: #26a69a;
+$negative: #c10015;
+$info: #31ccec;
+$warning: #f2c037;
