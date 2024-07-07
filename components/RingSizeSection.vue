@@ -3,7 +3,7 @@
 		<!-- desktop -->
 		<div class="flex-box show-desktop">
 			<div class="flexbox-item q-pr-md">
-				<div class="row items-center">
+				<div class="row items-center q-pr-xl q-mt-xl">
 					<div class="col-xs-1">
 						<q-icon
 							size="28px"
@@ -20,16 +20,18 @@
 					color="white q-mt-md q-mb-md seperator-ml"
 					size="3px"
 				/>
-				<p class="text-white">
+				<p class="text-white q-pr-xl">
 					{{ $t('homeView.ringSizeText') }}
 				</p>
 			</div>
-			<div class="flexbox-item image1">
-				<NuxtImg src="@/assets/img/entenberingung-m.jpeg" />
+			<div class="flexbox-item image">
+				<NuxtImg src="1.jpg" width="90%" height="400" />
 			</div>
-			<div class="flexbox-item image2" />
-			<div class="flexbox-item q-pl-md">
-				<div class="row items-center">
+      <div class="flexbox-item image" >
+        <NuxtImg src="2.jpg" width="90%" height="400" />
+      </div>
+			<div class="flexbox-item q-pl-md ">
+				<div class="row items-center q-pr-xl ">
 					<div class="col-xs-1">
 						<q-icon
 							size="28px"
@@ -46,12 +48,12 @@
 					color="white q-mt-md q-mb-md seperator-ml"
 					size="3px"
 				/>
-				<p class="text-white">
+				<p class="text-white q-pr-xl">
 					{{ $t('homeView.ringDestructionText') }}
 				</p>
 			</div>
 			<div class="flexbox-item q-pr-md">
-				<div class="row items-center">
+				<div class="row items-center q-pr-xl q-mt-xl">
 					<div class="col-xs-1">
 						<q-icon
 							size="28px"
@@ -68,14 +70,18 @@
 					color="white q-mt-md q-mb-md seperator-ml"
 					size="3px"
 				/>
-				<p class="text-white">
+				<p class="text-white q-pr-xl">
 					{{ $t('homeView.easyHandlingText') }}
 				</p>
 			</div>
-			<div class="flexbox-item image3" />
-			<div class="flexbox-item image4" />
+      <div class="flexbox-item image3" >
+        <NuxtImg src="3.jpg" width="90%" height="400" />
+      </div>
+      <div class="flexbox-item image4">
+        <NuxtImg src="4.jpg" width="90%" height="400" />
+      </div>
 			<div class="flexbox-item q-pl-md">
-				<div class="row items-center">
+				<div class="row items-center q-pr-xl q-mt-xl">
 					<div class="col-xs-1">
 						<q-icon
 							size="28px"
@@ -91,7 +97,7 @@
 					color="white q-mt-md q-mb-md seperator-ml"
 					size="3px"
 				/>
-				<p class="text-white">
+				<p class="text-white q-pr-xl">
 					{{ $t('homeView.qualityText') }}
 				</p>
 			</div>
@@ -225,6 +231,7 @@
             @include bp(l){
                 width: 50%;
                 height: 20%;
+              margin-top: $pad*3.5;
             }
             .item-title{
                 font-size: 22px;
@@ -241,7 +248,7 @@
 }
 
 .image{
-    width: 100%;
+    width: 50%;
 }
 .margin-left-icon{
     margin-left: 5px;

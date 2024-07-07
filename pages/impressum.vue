@@ -25,6 +25,10 @@
 <script setup>
 import ContentLayout from '../components/ContentLayout.vue';
 import ContentSection from '../components/ContentSection.vue';
+
+useSeoMeta({
+  robots: 'noindex',
+})
 </script>
 <style lang="scss">
 @import '../assets/scss/styles.scss';

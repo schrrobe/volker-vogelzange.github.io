@@ -73,7 +73,7 @@ html {
   }
 
   h1 {
-    font-size: $headline-h2* 0.7;
+    font-size: $headline-h2* 0.5;
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word; /* Für ältere Browser */;
@@ -125,7 +125,7 @@ html {
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word; /* Für ältere Browser */;
-    line-height: 3;
+    line-height: 1.8;
     text-align: center;
     margin-top: 0px;
     margin-bottom: $pad*2;
@@ -182,4 +182,10 @@ html {
   }
   .mb-space-2{
     margin-bottom: $space-margin *2;
+  }
+  .mt-space-mobile-1{
+    margin-top: $space-margin;
+    @include bp(l){
+      margin-top: 0;
+  }
   }

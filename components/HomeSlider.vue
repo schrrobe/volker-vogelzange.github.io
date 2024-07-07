@@ -1,6 +1,7 @@
 <template>
 	<q-carousel
 		v-model="slide"
+    v-touch:pan.prevent="preventScroll"
 		class="carousel"
 		style="height: 70vh;"
 		animated
@@ -39,7 +40,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, reactive, computed, onMounted, onUnmounted } from 'vue';
+import { defineComponent, ref, onBeforeUnmount , computed, onMounted, onUnmounted } from 'vue';
 import ContentLayout from '../components/ContentLayout.vue';
 import ContentSection from '../components/ContentSection.vue';
 
@@ -47,6 +48,7 @@ export default defineComponent({
   name: 'HomeSlider',
   setup() {
     const windowWidth = ref(0);
+    const carousel = ref(null);
 
     const imageSrc = computed(() => {
       return windowWidth.value < 1024 
@@ -58,9 +60,22 @@ export default defineComponent({
       windowWidth.value = window.innerWidth;
     };
 
+    const preventScroll = (event) => {
+      event.preventDefault();
+    };
+
     onMounted(() => {
       updateWindowWidth(); // Initial setting of window width
       window.addEventListener('resize', updateWindowWidth);
+      if (carousel.value) {
+        carousel.value.$el.addEventListener('wheel', preventScroll, { passive: false });
+      }
+    });
+
+    onBeforeUnmount(() => {
+      if (carousel.value) {
+        carousel.value.$el.removeEventListener('wheel', preventScroll);
+      }
     });
 
     onUnmounted(() => {
@@ -80,7 +95,7 @@ export default defineComponent({
 @import '../assets/scss/main.scss';
 
 .carousel{
-    height: 70vh;
+  min-height: 70vh;
 }
 
 .glass-box {
@@ -100,7 +115,7 @@ export default defineComponent({
 
 .triangle {
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
   border-right: 60vw solid transparent;
   border-bottom: 120vw solid rgba(255, 255, 255, 0.7);
   background-image: url('https://cdn.quasar.dev/img/mountains.jpg');
