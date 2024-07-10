@@ -47,4 +47,10 @@ export default {
 		consumerPointText: 'Nous ne sommes pas disposés ni obligés à participer à des procédures de résolution des litiges devant un conseil d\'arbitrage de consommation.',
 		src: 'Source:',
 	},
+	lawMenu: {
+		lawHead: 'Légal',
+		imprint: 'Mentions légales',
+		consent: 'Politique de confidentialité',
+	}
+
 };
